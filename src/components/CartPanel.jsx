@@ -2,14 +2,14 @@ import { formatKip } from "../data.js";
 
 function CartPanel({ cart, total, onIncrease, onDecrease, onRemove }) {
   return (
-    <aside class="cart">
+    <aside className="cart">
       <div className="cart-title">ກະຕ່າສິນຄ້າ · Cart</div>
       {cart.length === 0 ? (
         <div className="empty">ກະຕ່າວ່າງ · your cart is empty</div>
       ) : (
         <ul className="cart-list">
           {cart.map((item) => (
-            <li className="cart-item">
+            <li key={item.id} className="cart-item">
               <span className="emoji">{item.emoji}</span>
               <div className="info">
                 <div className="name">{item.name}</div>
@@ -20,7 +20,8 @@ function CartPanel({ cart, total, onIncrease, onDecrease, onRemove }) {
                 <span>{item.qty}</span>
                 <button onClick={() => onIncrease(item.id)}>＋</button>
               </div>
-              <button className="del" onClick={() => onRemove(item)}>✕</button>
+              {/* ແກ້ໄຂບ່ອນນີ້: ປ່ຽນຈາກ item ເປັນ item.id */}
+              <button className="del" onClick={() => onRemove(item.id)}>✕</button>
             </li>
           ))}
         </ul>
