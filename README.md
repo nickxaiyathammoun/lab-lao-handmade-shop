@@ -11,3 +11,4 @@ Open the URL it prints, and open the browser console (F12). Work through `BUG-HU
 
 Do not delete or rewrite whole files. Find the line that is wrong and fix it.
 "# 1" 
+"# 1" 
